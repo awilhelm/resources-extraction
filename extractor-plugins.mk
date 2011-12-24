@@ -5,5 +5,5 @@ $(foreach *,$(all.o),$(eval $(*:o=so): $*))
 CPPFLAGS +=\
 	-I$(VPATH)..\
 	-isystem/usr/include/glib-2.0\
-	-isystem/usr/lib/glib-2.0/include\
+	-isystem/usr/lib/i386-linux-gnu/glib-2.0/include\
 

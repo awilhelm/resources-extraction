@@ -44,7 +44,7 @@ static void extract(const char *file) {
 			assert(write(out_fd, p, size) >= 0);
 			assert(!close(out_fd));
 
-			if(!opt_keep_going) continue;
+			if(!opt_keep_going) break;
 		}
 	}
 	fprintf(stderr, "\n");
@@ -58,6 +58,7 @@ static void load_format(const char *file) {
 	init(format);
 	format->next = formats;
 	formats = format;
+	return;
 except:
 	fprintf(stderr, "%s\n", dlerror());
 	abort();
